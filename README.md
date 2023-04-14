@@ -61,12 +61,12 @@ Depending on your system's language and default LibreOffice settings, you maybe 
 
 You can either specify numbers or names (lower or upper case) - not all bits are available from all sources, and they are not necessarily consistent across sources either.
 
-| Name                 | Code |      YAHOO       | FT  | YAHOO (historic) | COINBASE |   Notes    |
-|:---------------------|:-----|:----------------:|:---:|:----------------:|----------|:----------:|
+| Name                 | Code |      YAHOO       | FT  | YAHOO (historic) | COINBASE | CMC |   Notes    |
+|:---------------------|:-----|:----------------:|:---:|:----------------:|----------|:---:|:----------:|
 | PREV_CLOSE           | 5    |       Yes        | Yes |||
 | OPEN                 | 6    |       Yes        | Yes |       Yes        | Yes      ||
 | CHANGE               | 7    |       Yes        | Yes |||
-| LAST_PRICE_DATE      | 8    |                  | Yes |                  |          | yyyy-mm-dd |
+| LAST_PRICE_DATE      | 8    |                  | Yes |                  |          || yyyy-mm-dd |
 | LAST_PRICE_TIME      | 10   |                  | Yes |||
 | CHANGE_IN_PERCENT    | 11   |       Yes        | Yes |||
 | LOW                  | 14   |       Yes        | Yes |       Yes        | Yes      ||
@@ -86,12 +86,12 @@ You can either specify numbers or names (lower or upper case) - not all bits are
 | PE_RATIO             | 69   |       Yes        | Yes |||
 | DIV                  | 70   |       Yes        | Yes |||
 | DIV_YIELD            | 71   |       Yes        | Yes |||
-| EX_DIV_DATE          | 72   |       Yes        | Yes |                  |          | yyyy-mm-dd |
+| EX_DIV_DATE          | 72   |       Yes        | Yes |                  |          || yyyy-mm-dd |
 | PAYOUT_RATIO         | 73   |       Yes        | No  |||
-| EXPIRY_DATE          | 74   | Yes (on options) | No  |                  |          | yyyy-mm-dd |
+| EXPIRY_DATE          | 74   | Yes (on options) | No  |                  |          || yyyy-mm-dd |
 | SHARES_OUT           | 75   |       Yes        | Yes |                  |          ||
 | FREE_FLOAT           | 76   |       Yes        | Yes |                  |          ||
-| SETTLEMENT_DATE      | 77   | Yes (on futures) |     |                  |          | yyyy-mm-dd |
+| SETTLEMENT_DATE      | 77   | Yes (on futures) |     |                  |          || yyyy-mm-dd |
 | CLOSE                | 90   |        No        | No  |       Yes        |          ||
 | ADJ_CLOSE            | 91   |        No        | No  |       Yes        |          ||
 | SECTOR               | 98   |       Yes        | Yes |||
