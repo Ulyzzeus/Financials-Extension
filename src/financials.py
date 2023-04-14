@@ -58,6 +58,7 @@ import financials_google as google
 import financials_yahoo as yahoo
 import financials_coinbase as coinbase
 import financials_ft as ft
+import financials_cmc as cmc
 
 implementation_name = "com.financials.getinfo.python.FinancialsImpl"  # as defined in Financials.xcu
 implementation_services = ("com.sun.star.sheet.AddIn",)
@@ -99,9 +100,10 @@ class FinancialsImpl(unohelper.Base, Financials):
         self.yahoo = yahoo.createInstance(ctx)
         self.coinbase = coinbase.createInstance(ctx)
         self.ft = ft.createInstance(ctx)
+        self.cmc = cmc.createInstance(ctx)
 
     @profile
-    def getRealtime(self, ticker, datacode=None, source=None):
+    def getRealtime(self, ticker, datacode=None, source=None, key):
 
         if ticker == 'SUPPORT' or ticker == 'support':
             return self.support(datacode)
@@ -145,6 +147,10 @@ class FinancialsImpl(unohelper.Base, Financials):
                 s = self.ft.getRealtime(ticker, datacode)
             elif source == 'COINBASE':
                 s = self.coinbase.getRealtime(ticker, datacode)
+            elif source == 'CMC' and not key:
+                return 'API key needed'
+            elif source == 'CMC':
+                s = self.cmc.getRealtime(ticker, datacode, key)
             else:
                 s = 'Source \'{}\' not supported'.format(source)
 
